@@ -14,5 +14,5 @@ jobs:
       - name: Install node js dependencies
         run: npm ci
       - name: Run Tests
-        run: npm test
+        run: npm test -- --watchAll=false
    
