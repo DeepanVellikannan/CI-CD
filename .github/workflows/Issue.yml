@@ -1,7 +1,8 @@
 name : Read issue events
 on: 
  issues:
-   - opened
+   - open
+   - edit
 jobs:
  read-context:
    runs-on: ubuntu-latest
