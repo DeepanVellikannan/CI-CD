@@ -1,0 +1,11 @@
+name : Read issue events
+on: 
+ issues:
+   - opened
+jobs:
+ read-context:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Print context details
+      run: echo "${{toJSON (Github) }}"
+   
