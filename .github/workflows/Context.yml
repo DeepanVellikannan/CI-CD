@@ -1,5 +1,15 @@
 name: Github Context
 on: 
+ push:
+  branches: 
+    - main
+    - 'dev-*'
+    - 'feature/*'
+ pull_request: 
+  types:
+    - opened
+    - edited
+    - closed
  workflow_dispatch:
 jobs:
  context-job:
