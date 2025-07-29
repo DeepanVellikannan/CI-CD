@@ -8,12 +8,12 @@ jobs:
      - name: Upload Artifact
        uses: actions/upload-artifact@v4.6.2
        with:
-         name: API-Service
-         path: api service
+         name: API Service
+         path: api-service
      - name: Download Artifact
        uses: actions/download-artifact@v4.3.0
        with: 
-        name: api service
+        name: API Service
 
      
        
