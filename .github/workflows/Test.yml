@@ -1,11 +1,14 @@
-name:
-  Test-Workflow
+name: Print Test Workflow
+
 on:
-  workflow_dispatch:
+ workflow_dispatch:
+ 
 jobs:
-  TestJob:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Greeting
-        run: echo "Welcome to the world"
-    
+ Test-Job:
+  runs-on: ubuntu-latest
+  steps:
+  - name: Print the content
+    run: echo "Hello World"
+   
+ 
+  
