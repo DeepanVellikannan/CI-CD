@@ -1,21 +1,20 @@
-name: Test and deploy pipeline.
+name: UploadAndDownload
 on: 
  workflow_dispatch:
 jobs:
- Test-job:
+ uploadAnddownload-Artifacts:
     runs-on: ubuntu-latest
     steps:
-      - name: Get the code from the repo
-        uses: actions/checkout@v4.2.2
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.9.1
-        with: 
-            node-version: 24
-      - name: Install node js dependencies
-        run: npm ci
-      - name: npm build
-        run: npm run build
-      - name: Deploy
-        run: echo "Deploying..."
+     - name: Upload Artifact
+       uses: actions/upload-artifact@v4.6.2
+       with:
+         name: API-Service
+         path: api service
+     - name: Download Artifact
+       uses: actions/download-artifact@v4.3.0
+       with: 
+        name: api service
 
+     
+       
    
