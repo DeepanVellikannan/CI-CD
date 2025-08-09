@@ -19,7 +19,7 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: About Repo
-      - run: echo " Repo details ${{ toJson (github) }}"
+      - run: echo "${{ toJson (github) }}"
     
         
      
