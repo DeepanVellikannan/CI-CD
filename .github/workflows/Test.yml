@@ -1,31 +1,26 @@
-name: Test,Deploy,Context Object sequential the Workflow
+name: Sample Workflow
+
 on:
   workflow_dispatch:
 
 jobs:
- Test-Project:
+  TestJob:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Print the content
-        run: echo "Executing the first job"
-      - name: Download the code from the repository
+      - name: Print the greeting
+        run: echo "Sample Workflow"
+      - name: Checkout
         uses: actions/checkout@v4.2.2
-      - name: Download the latest node version
+      - name: Setup Node.js environment
         uses: actions/setup-node@v3.9.1
-        with:
-          node-version: 18
-      - name: Setup Node.js depedency
+        with: 
+             version: 21
+      - name: install dependencies
         run: npm ci
- Info:
-    needs: Test-Project
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print the content
-        run: echo "Executing the third job"
-      - name: Fetch the context object
-        run: echo "${{ toJSON (github) }}"
-
-
-                 
- 
+     
         
+        
+
+
+      
