@@ -1,0 +1,35 @@
+name: Filters
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+      - 'dev.*'
+      - 'feature/.*'
+    paths:
+      - '.github/workflows/**'
+      - 'ApiConfig.jsx'
+
+  pull_request:
+    types:
+      - opened
+      - closed
+      - edited
+
+  issues:
+    types:
+      - opened
+      - closed
+
+  schedule:
+    - cron: '30 4 * * *'  # Runs every day at 10 AM IST (UTC 4:30)
+
+jobs:
+  TestJob:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test Message
+        run: echo "Filters"
